@@ -10,6 +10,9 @@ async function redisRequest(command: string[]) {
     },
     cache: "no-store",
   });
+  if (!response.ok) {
+    throw new Error(`Redis error: ${response.status}`);
+  }
   return response.json();
 }
 
