@@ -1,6 +1,6 @@
 "use client";
 
-import { Zap } from "lucide-react";
+import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import { useLanguage } from "@/context/LanguageContext";
 import { useWhatsApp } from "@/context/WhatsAppContext";
@@ -29,12 +29,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center">
-                <Zap className="w-4 h-4 text-black" />
-              </div>
-              <span className="text-xl font-bold text-white tracking-tight">
-                Anet<span className="text-amber-400">Yapım</span>
-              </span>
+              <Image
+                src="/logo.png"
+                alt="AnetYapım Logo"
+                width={140}
+                height={40}
+                className="h-8 w-auto object-contain"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-5">
               {t.footer.description}

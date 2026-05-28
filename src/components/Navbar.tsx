@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import { useLanguage } from "@/context/LanguageContext";
 import { useWhatsApp } from "@/context/WhatsAppContext";
@@ -56,12 +57,14 @@ export default function Navbar() {
               }}
               className="flex items-center gap-2 group"
             >
-              <div className="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center glow-amber">
-                <Zap className="w-4 h-4 text-black" />
-              </div>
-              <span className="text-xl font-bold text-white tracking-tight">
-                Anet<span className="text-amber-400">Yapım</span>
-              </span>
+              <Image
+                src="/logo.png"
+                alt="AnetYapım Logo"
+                width={140}
+                height={40}
+                className="h-8 sm:h-9 w-auto object-contain"
+                priority
+              />
             </a>
 
             {/* Desktop nav */}
@@ -138,8 +141,25 @@ export default function Navbar() {
               className="absolute inset-0 bg-black/60 backdrop-blur-sm"
               onClick={() => setIsOpen(false)}
             />
-            <div className="absolute right-0 top-0 h-full w-72 bg-gray-900 border-l border-gray-800 flex flex-col pt-20 px-6 pb-8">
-              <div className="flex flex-col gap-1">
+            <div className="absolute right-0 top-0 h-full w-72 bg-[#0c0c14] border-l border-white/5 flex flex-col pb-8">
+              {/* Drawer header with logo */}
+              <div className="flex items-center justify-between px-6 pt-5 pb-5 border-b border-white/5">
+                <Image
+                  src="/logo.png"
+                  alt="AnetYapım Logo"
+                  width={120}
+                  height={36}
+                  className="h-7 w-auto object-contain"
+                />
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              <div className="px-6 pt-4 flex flex-col flex-1">
+              <div className="flex flex-col gap-0.5">
                 {navLinks.map((link) => (
                   <a
                     key={link.key}
@@ -148,24 +168,25 @@ export default function Navbar() {
                       e.preventDefault();
                       handleNavClick(link.href);
                     }}
-                    className="py-4 px-4 text-gray-200 hover:text-white hover:bg-gray-800 rounded-xl font-medium transition-colors duration-200 text-lg"
+                    className="py-3.5 px-4 text-gray-300 hover:text-white hover:bg-white/5 rounded-xl font-medium transition-colors duration-200 text-base"
                   >
                     {t.nav[link.key as keyof typeof t.nav]}
                   </a>
                 ))}
               </div>
 
-              <div className="mt-auto pt-6 border-t border-gray-800">
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-3 w-full py-4 rounded-xl bg-[#25d366] hover:bg-[#1fb855] text-white font-bold text-lg transition-colors duration-200"
-                >
-                  <FaWhatsapp className="w-6 h-6" />
-                  {t.nav.contactBtn}
-                </a>
+                <div className="mt-auto pt-5 border-t border-white/5">
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-center gap-3 w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-base transition-colors duration-200"
+                  >
+                    <FaWhatsapp className="w-5 h-5" />
+                    {t.nav.contactBtn}
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
