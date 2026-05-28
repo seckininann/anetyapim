@@ -1,0 +1,159 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+import { useLanguage } from "@/context/LanguageContext";
+import { useWhatsApp } from "@/context/WhatsAppContext";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, delay, ease: "easeOut" },
+  }),
+};
+
+export default function Hero() {
+  const { t } = useLanguage();
+  const { whatsappUrl } = useWhatsApp();
+
+  const scrollToServices = () => {
+    document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToPortfolio = () => {
+    document.querySelector("#portfolio")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <section
+      id="hero"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 pt-20"
+    >
+      {/* Animated background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[#0a0a0f]" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-600/15 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-1/2 left-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-[80px]" />
+        {/* Grid overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+          }}
+        />
+      </div>
+
+      <div className="max-w-5xl mx-auto text-center">
+        {/* Badge */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-sm font-medium mb-6"
+        >
+          {t.hero.badge}
+        </motion.div>
+
+        {/* Title */}
+        <motion.h1
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.15}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6"
+        >
+          {t.hero.title}{" "}
+          <span className="gradient-text">{t.hero.titleHighlight}</span>
+          {t.hero.titleEnd && (
+            <>
+              <br />
+              {t.hero.titleEnd}
+            </>
+          )}
+        </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.3}
+          className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+        >
+          {t.hero.subtitle}
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.45}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+        >
+          {/* Primary: WhatsApp CTA */}
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-3 px-8 py-4 rounded-2xl bg-[#25d366] hover:bg-[#1fb855] text-white font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-green-500/40 hover:scale-105 glow-green min-w-[200px] justify-center"
+          >
+            <FaWhatsapp className="w-6 h-6" />
+            {t.hero.ctaPrimary}
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+          </a>
+
+          {/* Secondary */}
+          <button
+            onClick={scrollToPortfolio}
+            className="group flex items-center gap-2 px-8 py-4 rounded-2xl border border-gray-700 hover:border-blue-500 text-gray-300 hover:text-white font-semibold text-lg transition-all duration-300 hover:bg-blue-500/10 min-w-[200px] justify-center"
+          >
+            {t.hero.ctaSecondary}
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+          </button>
+        </motion.div>
+
+        {/* Stats */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.6}
+          className="grid grid-cols-3 gap-4 sm:gap-8 max-w-md mx-auto"
+        >
+          {[
+            { value: t.hero.stat1Value, label: t.hero.stat1Label },
+            { value: t.hero.stat2Value, label: t.hero.stat2Label },
+            { value: t.hero.stat3Value, label: t.hero.stat3Label },
+          ].map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="text-2xl sm:text-3xl font-extrabold text-white">
+                {stat.value}
+              </div>
+              <div className="text-xs sm:text-sm text-gray-500 mt-1">{stat.label}</div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Scroll indicator */}
+      <motion.button
+        onClick={scrollToServices}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 8, 0] }}
+        transition={{ delay: 1, duration: 2, repeat: Infinity }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-600 hover:text-gray-400 transition-colors"
+        aria-label="Aşağı kaydır"
+      >
+        <ChevronDown className="w-8 h-8" />
+      </motion.button>
+    </section>
+  );
+}
