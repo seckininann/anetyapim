@@ -8,12 +8,12 @@ const tr = {
     contactBtn: "Bize Ulaşın",
   },
   hero: {
-    badge: "⚡ Elite Digital Engineering Studio",
-    title: "Her Sistemi",
-    titleHighlight: "İnşa Edebiliriz",
+    badge: "⚡ AnetYapım — Digital Engineering Studio",
+    title: "Dijital",
+    titleHighlight: "İmkansız Yok.",
     titleEnd: "",
     subtitle:
-      "Ne kadar karmaşık olursa olsun — fintech platformları, AI destekli uygulamalar, gerçek zamanlı izleme sistemleri, blockchain altyapıları. Hayal edin, biz inşa edelim.",
+      "Fintech sistemlerinden AI platformlarına, IoT altyapılarından blockchain ağlarına — ne kadar karmaşık olursa olsun, mühendislik sorunlarına mühendislik çözümleri üretiyoruz.",
     ctaPrimary: "Projenizi Konuşalım",
     ctaSecondary: "Projelerimizi Gör",
     stat1Value: "250+",

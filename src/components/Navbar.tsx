@@ -41,7 +41,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-gray-900/95 backdrop-blur-md border-b border-gray-800 shadow-lg shadow-black/30"
+            ? "bg-[#08080f]/95 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/50"
             : "bg-transparent"
         }`}
       >
@@ -56,11 +56,11 @@ export default function Navbar() {
               }}
               className="flex items-center gap-2 group"
             >
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center glow-blue">
-                <Zap className="w-4 h-4 text-white" />
+              <div className="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center glow-amber">
+                <Zap className="w-4 h-4 text-black" />
               </div>
-              <span className="text-xl font-bold text-white">
-                Pixel<span className="text-blue-400">Craft</span>
+              <span className="text-xl font-bold text-white tracking-tight">
+                Anet<span className="text-amber-400">Yapım</span>
               </span>
             </a>
 
@@ -74,10 +74,10 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium relative group"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm font-medium relative group"
                 >
                   {t.nav[link.key as keyof typeof t.nav]}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-400 group-hover:w-full transition-all duration-300" />
                 </a>
               ))}
             </div>
@@ -87,7 +87,7 @@ export default function Navbar() {
               {/* Language toggle */}
               <button
                 onClick={toggleLang}
-                className="px-3 py-1.5 rounded-lg text-xs font-semibold border border-gray-700 text-gray-300 hover:border-blue-500 hover:text-blue-400 transition-all duration-200"
+                className="px-3 py-1.5 rounded-lg text-xs font-semibold border border-gray-700 text-gray-300 hover:border-amber-500 hover:text-amber-400 transition-all duration-200"
               >
                 {lang === "tr" ? "EN" : "TR"}
               </button>
@@ -97,7 +97,7 @@ export default function Navbar() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#25d366] hover:bg-[#1fb855] text-white font-semibold text-sm transition-all duration-200 shadow-lg hover:shadow-green-500/30 hover:scale-105"
+                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-sm transition-all duration-200 shadow-lg hover:shadow-amber-500/30 hover:scale-105"
               >
                 <FaWhatsapp className="w-4 h-4" />
                 {t.nav.contactBtn}

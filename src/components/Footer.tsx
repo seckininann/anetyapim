@@ -23,17 +23,17 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gray-950 border-t border-gray-800 pt-16 pb-8 px-4">
+    <footer className="bg-[#05050c] border-t border-white/5 pt-16 pb-8 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                <Zap className="w-4 h-4 text-white" />
+              <div className="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center">
+                <Zap className="w-4 h-4 text-black" />
               </div>
-              <span className="text-xl font-bold text-white">
-                Pixel<span className="text-blue-400">Craft</span>
+              <span className="text-xl font-bold text-white tracking-tight">
+                Anet<span className="text-amber-400">Yapım</span>
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-5">

@@ -32,21 +32,23 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 pt-20"
     >
-      {/* Animated background */}
+      {/* Background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[#0a0a0f]" />
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-600/15 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-1/2 left-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-[80px]" />
-        {/* Grid overlay */}
+        <div className="absolute inset-0 bg-[#08080f]" />
+        {/* Dot grid */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.06]"
           style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
+            backgroundImage: "radial-gradient(circle, rgba(245,158,11,0.6) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
           }}
         />
+        {/* Single strong ambient glow — bottom center */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-amber-500/5 rounded-full blur-[80px]" />
+        {/* Top right accent */}
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-amber-600/4 rounded-full blur-[120px]" />
+        {/* Vignette */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#08080f]/80" />
       </div>
 
       <div className="max-w-5xl mx-auto text-center">
@@ -56,7 +58,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={0}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-sm font-medium mb-6"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-sm font-medium mb-6 tracking-wide"
         >
           {t.hero.badge}
         </motion.div>
@@ -67,7 +69,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={0.15}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-white leading-[1.05] tracking-tight mb-6"
         >
           {t.hero.title}{" "}
           <span className="gradient-text">{t.hero.titleHighlight}</span>
@@ -103,7 +105,7 @@ export default function Hero() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-3 px-8 py-4 rounded-2xl bg-[#25d366] hover:bg-[#1fb855] text-white font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-green-500/40 hover:scale-105 glow-green min-w-[200px] justify-center"
+            className="group flex items-center gap-3 px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-amber-500/30 hover:scale-105 min-w-[200px] justify-center"
           >
             <FaWhatsapp className="w-6 h-6" />
             {t.hero.ctaPrimary}
@@ -113,7 +115,7 @@ export default function Hero() {
           {/* Secondary */}
           <button
             onClick={scrollToPortfolio}
-            className="group flex items-center gap-2 px-8 py-4 rounded-2xl border border-gray-700 hover:border-blue-500 text-gray-300 hover:text-white font-semibold text-lg transition-all duration-300 hover:bg-blue-500/10 min-w-[200px] justify-center"
+            className="group flex items-center gap-2 px-8 py-4 rounded-xl border border-white/10 hover:border-amber-500/50 text-gray-400 hover:text-white font-semibold text-lg transition-all duration-300 hover:bg-amber-500/5 min-w-[200px] justify-center"
           >
             {t.hero.ctaSecondary}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />

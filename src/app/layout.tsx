@@ -4,14 +4,14 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import { WhatsAppProvider } from "@/context/WhatsAppContext";
 
 export const metadata: Metadata = {
-  title: "PixelCraft Agency — Dijital Tasarım & Geliştirme",
+  title: "AnetYapım — Elite Digital Engineering Studio",
   description:
-    "Profesyonel web tasarım, e-ticaret, SEO ve dijital pazarlama hizmetleri. 150+ başarılı proje, 7+ yıl deneyim.",
+    "Fintech sistemleri, AI entegrasyonları, IoT platformları, blockchain altyapıları. Her dijital sistemi inşa ediyoruz. 250+ proje, 10+ yıl deneyim.",
   keywords:
-    "web tasarım, web geliştirme, seo, e-ticaret, dijital pazarlama, mobil uygulama",
+    "web geliştirme, fintech, blockchain, AI entegrasyonu, IoT, SaaS platform, kurumsal yazılım, web3",
   openGraph: {
-    title: "PixelCraft Agency",
-    description: "Markanızı dijital zirveye taşıyoruz.",
+    title: "AnetYapım — Elite Digital Engineering",
+    description: "Dijital imkansız diye bir şey yok.",
     type: "website",
   },
 };

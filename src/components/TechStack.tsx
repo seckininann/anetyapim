@@ -85,9 +85,9 @@ function MarqueeRow({ items, reverse = false }: { items: { name: string; color: 
 
 export default function TechStack() {
   return (
-    <section className="py-16 overflow-hidden border-y border-gray-800/50 bg-gray-900/10">
+    <section className="py-16 overflow-hidden border-y border-white/5 bg-[#08080f]">
       <div className="text-center mb-8">
-        <span className="text-xs font-semibold text-gray-600 uppercase tracking-widest">
+        <span className="text-xs font-semibold text-amber-500/60 uppercase tracking-widest">
           40+ Teknoloji — Hiçbir Sistem Çok Karmaşık Değil
         </span>
       </div>

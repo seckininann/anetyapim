@@ -45,7 +45,7 @@ export default function Services() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="py-24 px-4 bg-gray-900/30">
+    <section id="services" className="py-24 px-4 bg-[#0a0a12]/60">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -55,7 +55,7 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold bg-blue-500/10 border border-blue-500/20 text-blue-400 mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold bg-amber-500/10 border border-amber-500/20 text-amber-400 mb-4">
             {t.services.badge}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4">
@@ -76,7 +76,7 @@ export default function Services() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`relative p-6 rounded-2xl bg-gradient-to-br ${cardColors[i]} border border-gray-800 hover:border-gray-700 transition-all duration-300 group cursor-default`}
+                className={`relative p-6 rounded-2xl bg-gradient-to-br ${cardColors[i]} border border-white/5 hover:border-white/10 transition-all duration-300 group cursor-default`}
               >
                 <div
                   className={`w-12 h-12 rounded-xl bg-gray-900/80 flex items-center justify-center mb-5 ${iconColors[i]} group-hover:scale-110 transition-transform duration-300`}

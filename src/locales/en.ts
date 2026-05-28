@@ -8,12 +8,12 @@ const en = {
     contactBtn: "Contact Us",
   },
   hero: {
-    badge: "⚡ Elite Digital Engineering Studio",
-    title: "We Can Build",
-    titleHighlight: "Any System",
+    badge: "⚡ AnetYapım — Digital Engineering Studio",
+    title: "Nothing Is",
+    titleHighlight: "Impossible.",
     titleEnd: "",
     subtitle:
-      "No matter how complex — fintech platforms, AI-powered applications, real-time monitoring systems, blockchain infrastructure. You imagine it, we engineer it.",
+      "From fintech systems to AI platforms, IoT infrastructures to blockchain networks — no matter how complex, we engineer solutions to engineering problems.",
     ctaPrimary: "Let's Discuss Your Project",
     ctaSecondary: "View Our Work",
     stat1Value: "250+",

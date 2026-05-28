@@ -85,8 +85,8 @@ export default function Portfolio() {
               onClick={() => { setActiveFilter(filter); setShowAll(false); }}
               className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 border ${
                 activeFilter === filter
-                  ? "bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-500/20"
-                  : "bg-gray-900 border-gray-700 text-gray-400 hover:border-gray-600 hover:text-white"
+                  ? "bg-amber-500 border-amber-400 text-black shadow-lg shadow-amber-500/20 font-bold"
+                  : "bg-[#0f1017] border-white/10 text-gray-400 hover:border-amber-500/30 hover:text-white"
               }`}
             >
               {filter}

@@ -15,7 +15,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-24 px-4 bg-gray-900/20">
+    <section id="about" className="py-24 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: visual */}
@@ -27,9 +27,8 @@ export default function About() {
             className="relative"
           >
             {/* Main card */}
-            <div className="relative rounded-3xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 p-8 overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl" />
+            <div className="relative rounded-2xl bg-[#0f1017] border border-white/5 p-8 overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl" />
 
               {/* Stats inside card */}
               <div className="relative grid grid-cols-2 gap-6">
@@ -41,7 +40,7 @@ export default function About() {
                 ].map((stat, i) => (
                   <div
                     key={i}
-                    className="bg-gray-900/60 rounded-2xl p-5 border border-gray-700/50"
+                    className="bg-[#08080f] rounded-xl p-5 border border-white/5"
                   >
                     <div className="text-3xl mb-1">{stat.emoji}</div>
                     <div className="text-3xl font-extrabold text-white">
@@ -53,7 +52,7 @@ export default function About() {
               </div>
 
               {/* Floating badge */}
-              <div className="mt-6 flex items-center gap-3 bg-blue-500/10 border border-blue-500/20 rounded-xl p-4">
+              <div className="mt-6 flex items-center gap-3 bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
                 <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
                   <span className="text-xl">🔒</span>
                 </div>
@@ -75,7 +74,7 @@ export default function About() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold bg-amber-500/10 border border-amber-500/20 text-amber-400 mb-4">
               {t.about.badge}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">

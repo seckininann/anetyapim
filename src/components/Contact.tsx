@@ -47,7 +47,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold bg-green-500/10 border border-green-500/20 text-green-400 mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold bg-amber-500/10 border border-amber-500/20 text-amber-400 mb-4">
             {t.contact.badge}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4">
@@ -111,7 +111,7 @@ export default function Contact() {
           >
             <form
               onSubmit={handleSubmit}
-              className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 sm:p-8 space-y-5"
+              className="bg-[#0c0c14] border border-white/5 rounded-2xl p-6 sm:p-8 space-y-5"
             >
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
@@ -124,7 +124,7 @@ export default function Contact() {
                     value={form.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-[#0f1017] border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
                     placeholder="Ahmet Yılmaz"
                   />
                 </div>
@@ -138,7 +138,7 @@ export default function Contact() {
                     value={form.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-[#0f1017] border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
                     placeholder="ahmet@sirket.com"
                   />
                 </div>
@@ -153,7 +153,7 @@ export default function Contact() {
                   name="phone"
                   value={form.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-[#0f1017] border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
                   placeholder="+90 555 123 45 67"
                 />
               </div>
@@ -168,7 +168,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-[#0f1017] border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors resize-none"
                   placeholder={t.contact.form.messagePlaceholder}
                 />
               </div>
@@ -189,7 +189,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "sending" || status === "success"}
-                className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30"
+                className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 disabled:opacity-50 disabled:cursor-not-allowed text-black font-bold transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/30"
               >
                 {status === "sending" ? (
                   <>

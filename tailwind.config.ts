@@ -9,18 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "Poppins", "sans-serif"],
+        sans: ["Space Grotesk", "Inter", "sans-serif"],
       },
       colors: {
         brand: {
-          blue: "#3b82f6",
-          "blue-light": "#60a5fa",
+          accent: "#f59e0b",
+          "accent-light": "#fcd34d",
+          "accent-dark": "#d97706",
           whatsapp: "#25d366",
           "whatsapp-dark": "#128c7e",
-          bg: "#0a0a0f",
-          surface: "#111827",
-          "surface-2": "#1f2937",
-          border: "#374151",
+          bg: "#08080f",
+          surface: "#0f1017",
+          "surface-2": "#161820",
+          border: "#1e2030",
         },
       },
       animation: {
