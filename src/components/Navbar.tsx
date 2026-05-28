@@ -60,9 +60,9 @@ export default function Navbar() {
               <Image
                 src="/logo.png"
                 alt="AnetYapım Logo"
-                width={140}
-                height={40}
-                className="h-8 sm:h-9 w-auto object-contain"
+                width={220}
+                height={60}
+                className="h-10 sm:h-12 w-auto object-contain"
                 priority
               />
             </a>
@@ -147,9 +147,9 @@ export default function Navbar() {
                 <Image
                   src="/logo.png"
                   alt="AnetYapım Logo"
-                  width={120}
-                  height={36}
-                  className="h-7 w-auto object-contain"
+                  width={160}
+                  height={48}
+                  className="h-9 w-auto object-contain"
                 />
                 <button
                   onClick={() => setIsOpen(false)}

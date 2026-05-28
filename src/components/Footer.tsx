@@ -32,9 +32,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="AnetYapım Logo"
-                width={140}
-                height={40}
-                className="h-8 w-auto object-contain"
+                width={200}
+                height={56}
+                className="h-10 w-auto object-contain"
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-5">
