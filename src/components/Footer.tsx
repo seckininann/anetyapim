@@ -1,7 +1,7 @@
 "use client";
 
 import { Zap } from "lucide-react";
-import { FaWhatsapp, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import { useLanguage } from "@/context/LanguageContext";
 import { useWhatsApp } from "@/context/WhatsAppContext";
 
@@ -41,22 +41,15 @@ export default function Footer() {
             </p>
             {/* Social */}
             <div className="flex gap-3">
-              {[
-                { Icon: FaWhatsapp, href: whatsappUrl, color: "hover:text-green-400" },
-                { Icon: FaInstagram, href: "#", color: "hover:text-pink-400" },
-                { Icon: FaLinkedin, href: "#", color: "hover:text-blue-400" },
-                { Icon: FaTwitter, href: "#", color: "hover:text-sky-400" },
-              ].map(({ Icon, href, color }, i) => (
-                <a
-                  key={i}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-9 h-9 rounded-lg bg-gray-800 border border-gray-700 flex items-center justify-center text-gray-400 ${color} transition-colors duration-200`}
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg bg-gray-800 border border-gray-700 flex items-center justify-center text-gray-400 hover:text-green-400 transition-colors duration-200"
+                aria-label="WhatsApp"
+              >
+                <FaWhatsapp className="w-4 h-4" />
+              </a>
             </div>
           </div>
 

@@ -34,10 +34,10 @@ export default function About() {
               {/* Stats inside card */}
               <div className="relative grid grid-cols-2 gap-6">
                 {[
-                  { value: "150+", label: "Proje", emoji: "🚀" },
-                  { value: "98%", label: "Memnuniyet", emoji: "⭐" },
-                  { value: "7+", label: "Yıl Deneyim", emoji: "💼" },
-                  { value: "24/7", label: "Destek", emoji: "🛡️" },
+                  { value: "250+", label: "Kompleks Proje", emoji: "🚀" },
+                  { value: "40+", label: "Teknoloji", emoji: "⚡" },
+                  { value: "10+", label: "Yıl Deneyim", emoji: "💼" },
+                  { value: "24/7", label: "Teknik Destek", emoji: "🛡️" },
                 ].map((stat, i) => (
                   <div
                     key={i}
@@ -55,14 +55,14 @@ export default function About() {
               {/* Floating badge */}
               <div className="mt-6 flex items-center gap-3 bg-blue-500/10 border border-blue-500/20 rounded-xl p-4">
                 <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
-                  <span className="text-xl">🏆</span>
+                  <span className="text-xl">🔒</span>
                 </div>
                 <div>
                   <div className="text-white font-semibold text-sm">
-                    Google Partner
+                    NDA Korumalı — Enterprise Grade
                   </div>
                   <div className="text-gray-400 text-xs">
-                    Sertifikalı Dijital Ajans
+                    Her projede tam gizlilik garantisi
                   </div>
                 </div>
               </div>

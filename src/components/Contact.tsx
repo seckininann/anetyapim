@@ -3,14 +3,14 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { Send, MessageCircle } from "lucide-react";
+import { Send } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useLanguage } from "@/context/LanguageContext";
 import { useWhatsApp } from "@/context/WhatsAppContext";
 
 export default function Contact() {
   const { t } = useLanguage();
-  const { whatsappUrl } = useWhatsApp();
+  const { whatsappUrl, number: whatsappNumber } = useWhatsApp();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -21,13 +21,19 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    await new Promise((r) => setTimeout(r, 1200));
-    setStatus("success");
-    setForm({ name: "", email: "", phone: "", message: "" });
-    setTimeout(() => setStatus("idle"), 5000);
+    const num = whatsappNumber || "905551234567";
+    const text = encodeURIComponent(
+      `Ad: ${form.name}\nE-posta: ${form.email}${form.phone ? `\nTelefon: ${form.phone}` : ""}\n\nMesaj: ${form.message}`
+    );
+    setTimeout(() => {
+      window.open(`https://wa.me/${num}?text=${text}`, "_blank");
+      setStatus("success");
+      setForm({ name: "", email: "", phone: "", message: "" });
+      setTimeout(() => setStatus("idle"), 5000);
+    }, 400);
   };
 
   return (
@@ -170,7 +176,7 @@ export default function Contact() {
               {/* Status messages */}
               {status === "success" && (
                 <div className="flex items-center gap-2 p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-400 text-sm">
-                  <MessageCircle className="w-4 h-4 flex-shrink-0" />
+                  <FaWhatsapp className="w-4 h-4 flex-shrink-0" />
                   {t.contact.form.success}
                 </div>
               )}

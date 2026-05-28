@@ -5,32 +5,38 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import {
   Globe,
-  ShoppingCart,
-  Search,
+  TrendingUp,
+  Brain,
+  Radio,
+  Hexagon,
+  Server,
+  ShieldCheck,
   Smartphone,
-  Palette,
-  Share2,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
-const icons = [Globe, ShoppingCart, Search, Smartphone, Palette, Share2];
+const icons = [Globe, TrendingUp, Brain, Radio, Hexagon, Server, ShieldCheck, Smartphone];
 
 const cardColors = [
   "from-blue-500/20 to-blue-600/5 hover:from-blue-500/30",
-  "from-emerald-500/20 to-emerald-600/5 hover:from-emerald-500/30",
+  "from-yellow-500/20 to-yellow-600/5 hover:from-yellow-500/30",
   "from-purple-500/20 to-purple-600/5 hover:from-purple-500/30",
-  "from-orange-500/20 to-orange-600/5 hover:from-orange-500/30",
-  "from-pink-500/20 to-pink-600/5 hover:from-pink-500/30",
   "from-cyan-500/20 to-cyan-600/5 hover:from-cyan-500/30",
+  "from-orange-500/20 to-orange-600/5 hover:from-orange-500/30",
+  "from-emerald-500/20 to-emerald-600/5 hover:from-emerald-500/30",
+  "from-red-500/20 to-red-600/5 hover:from-red-500/30",
+  "from-pink-500/20 to-pink-600/5 hover:from-pink-500/30",
 ];
 
 const iconColors = [
   "text-blue-400",
-  "text-emerald-400",
+  "text-yellow-400",
   "text-purple-400",
-  "text-orange-400",
-  "text-pink-400",
   "text-cyan-400",
+  "text-orange-400",
+  "text-emerald-400",
+  "text-red-400",
+  "text-pink-400",
 ];
 
 export default function Services() {

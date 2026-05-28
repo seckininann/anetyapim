@@ -6,12 +6,14 @@ import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import TechStack from "@/components/TechStack";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0a0a0f] text-white overflow-x-hidden">
       <Navbar />
       <Hero />
+      <TechStack />
       <Services />
       <Portfolio />
       <About />
