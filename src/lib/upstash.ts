@@ -28,11 +28,14 @@ export async function getWhatsAppNumber(): Promise<string> {
   }
 }
 
-export async function setWhatsAppNumber(number: string): Promise<boolean> {
+export async function setWhatsAppNumber(number: string): Promise<{ success: boolean; error?: string }> {
+  if (!REDIS_URL || !REDIS_TOKEN) {
+    return { success: false, error: "UPSTASH_REDIS_REST_URL veya UPSTASH_REDIS_REST_TOKEN env değişkeni eksik." };
+  }
   try {
     await redisRequest(["set", KEY, number]);
-    return true;
-  } catch {
-    return false;
+    return { success: true };
+  } catch (e) {
+    return { success: false, error: String(e) };
   }
 }

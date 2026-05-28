@@ -16,26 +16,26 @@ export async function POST(req: NextRequest) {
     const { number, password } = body;
 
     if (password !== adminPassword) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      return NextResponse.json({ error: "Şifre hatalı." }, { status: 401 });
     }
 
     if (!number || !/^\d{10,15}$/.test(number)) {
       return NextResponse.json(
-        { error: "Geçersiz numara formatı. Sadece rakam, 10-15 karakter." },
+        { error: "Geçersiz numara formatı. Sadece rakam, 10-15 karakter. (örn: 905551234567)" },
         { status: 400 }
       );
     }
 
-    const success = await setWhatsAppNumber(number);
+    const { success, error } = await setWhatsAppNumber(number);
     if (success) {
       return NextResponse.json({ success: true, number });
     } else {
       return NextResponse.json(
-        { error: "Numara kaydedilemedi." },
+        { error: `Redis hatası: ${error}` },
         { status: 500 }
       );
     }
-  } catch {
-    return NextResponse.json({ error: "Geçersiz istek." }, { status: 400 });
+  } catch (e) {
+    return NextResponse.json({ error: `İstek hatası: ${e}` }, { status: 400 });
   }
 }
