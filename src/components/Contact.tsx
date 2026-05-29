@@ -4,13 +4,11 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { Send } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
 import { useLanguage } from "@/context/LanguageContext";
-import { useWhatsApp } from "@/context/WhatsAppContext";
 
 export default function Contact() {
   const { t } = useLanguage();
-  const { whatsappUrl, number: whatsappNumber } = useWhatsApp();
+  const MAIL_TO = "anetyapim@gmail.com";
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -24,16 +22,16 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    const num = whatsappNumber || "905551234567";
-    const text = encodeURIComponent(
+    const subject = encodeURIComponent(`Yeni İletişim: ${form.name}`);
+    const body = encodeURIComponent(
       `Ad: ${form.name}\nE-posta: ${form.email}${form.phone ? `\nTelefon: ${form.phone}` : ""}\n\nMesaj: ${form.message}`
     );
     setTimeout(() => {
-      window.open(`https://wa.me/${num}?text=${text}`, "_blank");
+      window.location.href = `mailto:${MAIL_TO}?subject=${subject}&body=${body}`;
       setStatus("success");
       setForm({ name: "", email: "", phone: "", message: "" });
       setTimeout(() => setStatus("idle"), 5000);
-    }, 400);
+    }, 300);
   };
 
   return (
@@ -59,30 +57,14 @@ export default function Contact() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-10">
-          {/* Left: WhatsApp CTA + info */}
+          {/* Left: Info only */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col gap-6"
           >
-            {/* WhatsApp main CTA */}
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-5 p-6 rounded-2xl bg-gradient-to-br from-green-500/20 to-emerald-600/10 border border-green-500/30 hover:border-green-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/10"
-            >
-              <div className="w-16 h-16 rounded-2xl bg-[#25d366] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-green-500/30">
-                <FaWhatsapp className="w-9 h-9 text-white" />
-              </div>
-              <div>
-                <div className="text-xl font-bold text-white mb-1">
-                  {t.contact.whatsappBtn}
-                </div>
-                <div className="text-gray-400 text-sm">{t.contact.whatsappDesc}</div>
-              </div>
-            </a>
+            
 
             {/* Info cards */}
             {[
@@ -176,7 +158,7 @@ export default function Contact() {
               {/* Status messages */}
               {status === "success" && (
                 <div className="flex items-center gap-2 p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-400 text-sm">
-                  <FaWhatsapp className="w-4 h-4 flex-shrink-0" />
+                  <Send className="w-4 h-4 flex-shrink-0" />
                   {t.contact.form.success}
                 </div>
               )}

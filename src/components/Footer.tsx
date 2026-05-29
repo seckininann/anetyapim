@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
-import { useWhatsApp } from "@/context/WhatsAppContext";
 
 const navLinks = [
   { key: "home", href: "#hero" },
@@ -14,7 +13,6 @@ const navLinks = [
 
 export default function Footer() {
   const { t } = useLanguage();
-  const { whatsappUrl } = useWhatsApp();
   const year = new Date().getFullYear();
 
   const scrollTo = (href: string) => {
@@ -79,9 +77,13 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
           <p>
-            © {year} PixelCraft Agency. {t.footer.rights}
+            © {year} AnetYapım. {t.footer.rights}
           </p>
-          <p>{t.footer.madeWith}</p>
+          <div className="flex items-center gap-3">
+            <a href="mailto:anetyapim@gmail.com" className="text-gray-400 hover:text-white transition-colors">anetyapim@gmail.com</a>
+            <span className="hidden sm:inline">•</span>
+            <span>{t.footer.madeWith}</span>
+          </div>
         </div>
       </div>
     </footer>
