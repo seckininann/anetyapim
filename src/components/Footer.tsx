@@ -80,9 +80,13 @@ export default function Footer() {
             © {year} AnetYapım. {t.footer.rights}
           </p>
           <div className="flex items-center gap-3">
-            <a href="mailto:anetyapim@gmail.com" className="text-gray-400 hover:text-white transition-colors">anetyapim@gmail.com</a>
-            <span className="hidden sm:inline">•</span>
-            <span>{t.footer.madeWith}</span>
+            <a
+              href="mailto:anetyapim@gmail.com"
+              className="px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 hover:bg-amber-500/20 hover:text-amber-300 font-semibold text-xs sm:text-sm transition-colors"
+            >
+              anetyapim@gmail.com
+            </a>
+            <span className="text-gray-500">{t.footer.madeWith}</span>
           </div>
         </div>
       </div>
