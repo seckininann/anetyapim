@@ -85,7 +85,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Right side: lang toggle + CTA */}
+            {/* Right side: lang toggle + WhatsApp CTA (single entry) */}
             <div className="hidden lg:flex items-center gap-3">
               {/* Language toggle */}
               <button

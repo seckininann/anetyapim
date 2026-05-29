@@ -5,7 +5,6 @@ import Portfolio from "@/components/Portfolio";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
 import TechStack from "@/components/TechStack";
 
 export default function Home() {
@@ -19,7 +18,6 @@ export default function Home() {
       <About />
       <Contact />
       <Footer />
-      <WhatsAppFloat />
     </main>
   );
 }

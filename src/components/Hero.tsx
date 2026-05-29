@@ -101,16 +101,13 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
           {/* Primary: WhatsApp CTA */}
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="group flex items-center gap-3 px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-amber-500/30 hover:scale-105 min-w-[200px] justify-center"
           >
-            <FaWhatsapp className="w-6 h-6" />
             {t.hero.ctaPrimary}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-          </a>
+          </button>
 
           {/* Secondary */}
           <button

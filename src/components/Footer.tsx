@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { FaWhatsapp } from "react-icons/fa";
 import { useLanguage } from "@/context/LanguageContext";
 import { useWhatsApp } from "@/context/WhatsAppContext";
 
@@ -40,18 +39,8 @@ export default function Footer() {
             <p className="text-gray-400 text-sm leading-relaxed mb-5">
               {t.footer.description}
             </p>
-            {/* Social */}
-            <div className="flex gap-3">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-gray-800 border border-gray-700 flex items-center justify-center text-gray-400 hover:text-green-400 transition-colors duration-200"
-                aria-label="WhatsApp"
-              >
-                <FaWhatsapp className="w-4 h-4" />
-              </a>
-            </div>
+            {/* Social removed: only menu has WhatsApp */}
+            <div className="flex gap-3" />
           </div>
 
           {/* Quick links */}
@@ -84,24 +73,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact / WhatsApp */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">{t.footer.contact}</h4>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-3 rounded-xl bg-[#25d366]/10 border border-[#25d366]/30 text-[#25d366] hover:bg-[#25d366]/20 transition-colors duration-200 text-sm font-medium mb-4"
-            >
-              <FaWhatsapp className="w-5 h-5" />
-              WhatsApp&apos;tan Yazın
-            </a>
-            <p className="text-gray-500 text-xs leading-relaxed">
-              Hafta içi 09:00 - 18:00
-              <br />
-              Hızlı yanıt garantisi
-            </p>
-          </div>
+          {/* Contact column removed */}
         </div>
 
         {/* Bottom bar */}
